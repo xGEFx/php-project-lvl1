@@ -3,7 +3,7 @@
     "description": "Learning project at hexlet.io #1",
     "autoload": {
         "psr-4": {
-            "Gef\\BrainGames\\": "src/"
+            "BrainGames\\": "src/"
         }
     },
     "authors": [
@@ -15,5 +15,9 @@
     "bin": [
         "bin/brain-games"
     ],
-    "require": {}
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "wp-cli/php-cli-tools": "^0.11.13"
+    }
 }
