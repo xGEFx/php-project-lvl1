@@ -1,16 +1,19 @@
 {
-    "name": "gefwe/hexlet1",
-    "description": "hexlet project 1",
-    "type": "project",
+    "name": "gef/brain-games",
+    "description": "Learning project at hexlet.io #1",
     "autoload": {
         "psr-4": {
-            "Gefwe\\Hexlet1\\": "src/"
+            "Gef\\BrainGames\\": "src/"
         }
     },
     "authors": [
         {
-            "name": "GEF"
+            "name": "Ковалев Дмитрий",
+            "email": "dkovalev@dengisrazy.ru"
         }
+    ],
+    "bin": [
+        "bin/brain-games"
     ],
     "require": {}
 }
