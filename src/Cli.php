@@ -2,6 +2,8 @@
 
 namespace BrainGames;
 
+use BrainGames\Models\User;
+
 use function cli\line;
 use function cli\prompt;
 
@@ -16,5 +18,6 @@ class Cli
     {
         $name = prompt('May I have your name?');
         line("Hello, %s!", $name);
+        return new User($name);
     }
 }
