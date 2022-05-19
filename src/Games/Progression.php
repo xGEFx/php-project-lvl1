@@ -6,7 +6,7 @@ use BrainGames\Engine;
 use BrainGames\Games\GamesInterface;
 use Exception;
 
-class Progression
+class Progression implements GamesInterface
 {
     use Engine;
 
