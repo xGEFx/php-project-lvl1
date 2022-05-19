@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "09c4d80840d9389069bfb7f3e4d45119",
+    "content-hash": "27dd904eeecb67dd31d34f66656ce4d4",
     "packages": [
         {
             "name": "langleyfoxall/math_eval",

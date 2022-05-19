@@ -1,5 +1,5 @@
 {
-    "name": "gef/brain-games",
+    "name": "hexlet/code",
     "description": "Learning project at hexlet.io #1",
     "autoload": {
         "psr-4": {
