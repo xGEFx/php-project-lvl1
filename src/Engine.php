@@ -35,4 +35,9 @@ trait Engine
         }
         line("Congratulations, %s!", $this->user->getName());
     }
+
+    public function isCorrect($question, $answer): bool
+    {
+        return $this->correctAnswer($question) === $answer;
+    }
 }

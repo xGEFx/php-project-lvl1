@@ -28,11 +28,6 @@ class Even implements GamesInterface
         return 'Answer "yes" if the number is even, otherwise answer "no".';
     }
 
-    public function isCorrect($question, $answer): bool
-    {
-        return $answer === $this->correctAnswer($question);
-    }
-
     public function correctAnswer($question): string
     {
         return $question % 2 == 0 ? 'yes' : 'no';

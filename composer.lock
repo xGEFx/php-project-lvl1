@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bf5b9b344928a0750e2c444bafb83d07",
+    "content-hash": "09c4d80840d9389069bfb7f3e4d45119",
     "packages": [
         {
             "name": "langleyfoxall/math_eval",
@@ -223,7 +223,9 @@
     "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": [],
+    "platform": {
+        "ext-gmp": "*"
+    },
     "platform-dev": [],
     "plugin-api-version": "2.1.0"
 }
