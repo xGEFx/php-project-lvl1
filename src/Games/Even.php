@@ -6,9 +6,6 @@ use BrainGames\Engine;
 use BrainGames\Games\GamesInterface;
 use Exception;
 
-use function cli\line;
-use function cli\prompt;
-
 class Even implements GamesInterface
 {
     use Engine;
