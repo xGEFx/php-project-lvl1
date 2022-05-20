@@ -1,32 +1,28 @@
 <?php
 
-namespace BrainGames\Games;
+namespace Hexlet\Code\Games;
 
-use BrainGames\Engine;
-use BrainGames\Games\GamesInterface;
-use Exception;
+require __DIR__ . '/../Engine.php';
 
-class Even implements GamesInterface
+use function Hexlet\Code\game;
+use function Hexlet\Code\isCorrect;
+
+function startGame($userName)
 {
-    use Engine;
+    game($userName);
+}
 
-    public const MOVES = 3;
+function getQuestion(): string
+{
+    return random_int(1, 50);
+}
 
-    /**
-     * @throws Exception
-     */
-    public function getQuestion(): string
-    {
-        return random_int(1, 50);
-    }
+function getWelcomeMessage(): string
+{
+    return 'Answer "yes" if the number is even, otherwise answer "no".';
+}
 
-    public function getWelcomeMessage(): string
-    {
-        return 'Answer "yes" if the number is even, otherwise answer "no".';
-    }
-
-    public function correctAnswer($question): string
-    {
-        return $question % 2 == 0 ? 'yes' : 'no';
-    }
+function correctAnswer($question): string
+{
+    return $question % 2 == 0 ? 'yes' : 'no';
 }

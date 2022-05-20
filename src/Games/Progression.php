@@ -1,42 +1,39 @@
 <?php
 
-namespace BrainGames\Games;
+namespace Hexlet\Code\Games;
 
-use BrainGames\Engine;
-use BrainGames\Games\GamesInterface;
-use Exception;
+use function Hexlet\Code\game;
+use function Hexlet\Code\isCorrect;
 
-class Progression implements GamesInterface
+require __DIR__ . '/../Engine.php';
+$correctAnswer = '';
+
+function startGame($userName)
 {
-    use Engine;
+    game($userName);
+}
 
-    private $correctAnswer = '';
-
-    public const MOVES = 3;
-
-    /**
-     * @throws Exception
-     */
-    public function getQuestion(): string
-    {
-        $step = random_int(1, 20);
-        $progression = [];
-        for ($i = 0; $i < 10; $i++) {
-            $progression[] = ($i + 1) * $step;
-        }
-        $deletedItem = random_int(0, 9);
-        $this->correctAnswer = $progression[$deletedItem];
-        $progression[$deletedItem] = '..';
-        return implode(' ', $progression);
+function getQuestion(): string
+{
+    global $correctAnswer;
+    $step = random_int(1, 20);
+    $progression = [];
+    for ($i = 0; $i < 10; $i++) {
+        $progression[] = ($i + 1) * $step;
     }
+    $deletedItem = random_int(0, 9);
+    $correctAnswer = $progression[$deletedItem];
+    $progression[$deletedItem] = '..';
+    return implode(' ', $progression);
+}
 
-    public function getWelcomeMessage(): string
-    {
-        return "What number is missing in the progression?";
-    }
+function getWelcomeMessage(): string
+{
+    return "What number is missing in the progression?";
+}
 
-    public function correctAnswer($question): string
-    {
-        return $this->correctAnswer;
-    }
+function correctAnswer($question): string
+{
+    global $correctAnswer;
+    return $correctAnswer;
 }

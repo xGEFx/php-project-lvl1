@@ -1,43 +1,34 @@
 <?php
 
-namespace BrainGames;
-
-use BrainGames\Models\User;
+namespace Hexlet\Code;
 
 use function cli\line;
 use function cli\prompt;
+use function Hexlet\Code\Games\getWelcomeMessage;
+use function Hexlet\Code\Games\getQuestion;
+use function Hexlet\Code\Games\correctAnswer;
 
-trait Engine
+const MOVES = 3;
+
+function game($userName)
 {
-    private $user;
-
-    /**
-     * @throws Exception
-     */
-    public function __construct(User $user)
-    {
-        $this->user = $user;
-    }
-
-    public function game()
-    {
-        line($this->getWelcomeMessage());
-        for ($i = 0; $i < $this::MOVES; $i++) {
-            $question = $this->getQuestion();
-            line("Question: {$question}");
-            $answer = prompt('Your answer: ');
-            if (!$this->isCorrect($question, $answer)) {
-                line("'{$answer}' is wrong answer ;(. Correct answer was '{$this->correctAnswer($question)}'.");
-                line("Let's try again, %s!", $this->user->getName());
-                exit;
-            }
-            line("Correct!");
+    line(getWelcomeMessage());
+    for ($i = 0; $i < MOVES; $i++) {
+        $question = getQuestion();
+        line("Question: {$question}");
+        $answer = prompt('Your answer: ');
+        if (!isCorrect($question, $answer)) {
+            $correctAnswer = correctAnswer($question);
+            line("'{$answer}' is wrong answer ;(. Correct answer was '{$correctAnswer}'.");
+            line("Let's try again, %s!", $userName);
+            exit;
         }
-        line("Congratulations, %s!", $this->user->getName());
+        line("Correct!");
     }
+    line("Congratulations, %s!", $userName);
+}
 
-    public function isCorrect($question, $answer): bool
-    {
-        return $this->correctAnswer($question) === $answer;
-    }
+function isCorrect(string $question, string $answer): bool
+{
+    return correctAnswer($question) === $answer;
 }

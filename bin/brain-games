@@ -1,7 +1,8 @@
 #!/usr/bin/env php
 
 <?php
-use BrainGames\Cli;
+
+require __DIR__ . '/../src/Cli.php';
 
 $autoloadPath1 = __DIR__ . '/../../../autoload.php';
 $autoloadPath2 = __DIR__ . '/../vendor/autoload.php';
@@ -11,5 +12,8 @@ if (file_exists($autoloadPath1)) {
     require_once $autoloadPath2;
 }
 
-Cli::hello();
-$name = Cli::askName();
+use function Hexlet\Code\hello;
+use function Hexlet\Code\askName;
+
+hello();
+askName();

@@ -1,38 +1,34 @@
 <?php
 
-namespace BrainGames\Games;
+namespace Hexlet\Code\Games;
 
-use BrainGames\Engine;
-use BrainGames\Games\GamesInterface;
-use Exception;
+require __DIR__ . '/../Engine.php';
 
-class Prime implements GamesInterface
+use function Hexlet\Code\game;
+use function Hexlet\Code\isCorrect;
+
+function startGame($userName)
 {
-    use Engine;
+    game($userName);
+}
 
-    public const MOVES = 3;
+function getQuestion(): string
+{
+    return random_int(1, 100);
+}
 
-    /**
-     * @throws Exception
-     */
-    public function getQuestion(): string
-    {
-        return random_int(1, 100);
-    }
+function getWelcomeMessage(): string
+{
+    return 'Answer "yes" if given number is prime. Otherwise answer "no".';
+}
 
-    public function getWelcomeMessage(): string
-    {
-        return 'Answer "yes" if given number is prime. Otherwise answer "no".';
-    }
-
-    public function correctAnswer($question): string
-    {
-        $count = 0;
-        for ($i = 1; $i <= $question; $i++) {
-            if ($question % $i === 0) {
-                $count++;
-            }
+function correctAnswer($question): string
+{
+    $count = 0;
+    for ($i = 1; $i <= $question; $i++) {
+        if ($question % $i === 0) {
+            $count++;
         }
-        return $count === 2 ? 'yes' : 'no';
     }
+    return $count === 2 ? 'yes' : 'no';
 }

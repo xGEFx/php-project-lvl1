@@ -1,36 +1,33 @@
 <?php
 
-namespace BrainGames\Games;
+namespace Hexlet\Code\Games;
 
-use BrainGames\Games\GamesInterface;
-use Exception;
-use LangleyFoxall\MathEval;
-use BrainGames\Engine;
+require __DIR__ . '/../Engine.php';
 
-class Calc implements GamesInterface
+use function Hexlet\Code\game;
+use function Hexlet\Code\isCorrect;
+
+const OPERATORS = ['+', '-', '*'];
+
+function startGame($userName)
 {
-    use Engine;
+    game($userName);
+}
 
-    public const OPERATORS = ['+', '-', '*'];
-    public const MOVES = 3;
+function getQuestion(): string
+{
+    $operand_1 = random_int(0, 10);
+    $operand_2 = random_int(0, 10);
+    $operator = OPERATORS[random_int(0, 2)];
+    return "{$operand_1} {$operator} {$operand_2}";
+}
 
-    /**
-     * @throws Exception
-     */
-    public function getQuestion(): string
-    {
-        $operand_1 = random_int(0, 10);
-        $operand_2 = random_int(0, 10);
-        return "{$operand_1} {$this::OPERATORS[random_int(0, 2)]} {$operand_2}";
-    }
+function getWelcomeMessage(): string
+{
+    return "What is the result of the expression?";
+}
 
-    public function getWelcomeMessage(): string
-    {
-        return "What is the result of the expression?";
-    }
-
-    public function correctAnswer($question): string
-    {
-        return math_eval($question);
-    }
+function correctAnswer($question): string
+{
+    return math_eval($question);
 }

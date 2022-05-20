@@ -1,9 +1,10 @@
 {
     "name": "hexlet/code",
-    "description": "Learning project at hexlet.io #1",
+    "description": "Hexlet first project",
+    "type": "library",
     "autoload": {
         "psr-4": {
-            "BrainGames\\": "src/"
+            "Hexlet\\Code\\": "src/"
         }
     },
     "authors": [
@@ -20,7 +21,6 @@
         "bin/brain-progression",
         "bin/brain-prime"
     ],
-    "type": "library",
     "license": "MIT",
     "require": {
         "wp-cli/php-cli-tools": "^0.11.13",
