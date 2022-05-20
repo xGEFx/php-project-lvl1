@@ -10,7 +10,7 @@ use function Hexlet\Code\Games\correctAnswer;
 
 const MOVES = 3;
 
-function game($userName)
+function game(string $userName)
 {
     line(getWelcomeMessage());
     for ($i = 0; $i < MOVES; $i++) {

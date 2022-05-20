@@ -7,7 +7,7 @@ use function Hexlet\Code\isCorrect;
 
 const OPERATORS = ['+', '-', '*'];
 
-function startGame($userName)
+function startGame(string $userName)
 {
     game($userName);
 }
@@ -25,7 +25,7 @@ function getWelcomeMessage(): string
     return "What is the result of the expression?";
 }
 
-function correctAnswer($question): string
+function correctAnswer(string $question): string
 {
     return math_eval($question);
 }

@@ -5,7 +5,7 @@ namespace Hexlet\Code\Games;
 use function Hexlet\Code\game;
 use function Hexlet\Code\isCorrect;
 
-function startGame($userName)
+function startGame(string $userName)
 {
     game($userName);
 }
@@ -22,7 +22,7 @@ function getWelcomeMessage(): string
     return "Find the greatest common divisor of given numbers.";
 }
 
-function correctAnswer($question): string
+function correctAnswer(string $question): string
 {
     [$x, $y] = explode(" ", $question);
 

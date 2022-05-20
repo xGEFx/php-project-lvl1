@@ -5,7 +5,7 @@ namespace Hexlet\Code\Games;
 use function Hexlet\Code\game;
 use function Hexlet\Code\isCorrect;
 
-function startGame($userName)
+function startGame(string $userName)
 {
     game($userName);
 }
@@ -29,7 +29,7 @@ function getWelcomeMessage(): string
     return "What number is missing in the progression?";
 }
 
-function correctAnswer($question): string
+function correctAnswer(string $question): string
 {
     global $correctAnswer;
     return $correctAnswer;

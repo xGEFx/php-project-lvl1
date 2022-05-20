@@ -5,7 +5,7 @@ namespace Hexlet\Code\Games;
 use function Hexlet\Code\game;
 use function Hexlet\Code\isCorrect;
 
-function startGame($userName)
+function startGame(string $userName)
 {
     game($userName);
 }
@@ -20,7 +20,7 @@ function getWelcomeMessage(): string
     return 'Answer "yes" if given number is prime. Otherwise answer "no".';
 }
 
-function correctAnswer($question): string
+function correctAnswer(string $question): string
 {
     $count = 0;
     for ($i = 1; $i <= $question; $i++) {
