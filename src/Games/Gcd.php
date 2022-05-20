@@ -17,8 +17,8 @@ class Gcd implements GamesInterface
      */
     public function getQuestion(): string
     {
-        $operand_1 = random_int(0, 50);
-        $operand_2 = random_int(0, 50);
+        $operand_1 = random_int(1, 50);
+        $operand_2 = random_int(1, 50);
         return "{$operand_1} {$operand_2}";
     }
 
