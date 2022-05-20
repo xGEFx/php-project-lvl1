@@ -3,6 +3,7 @@
 <?php
 require __DIR__ . '/../src/Cli.php';
 require __DIR__ . '/../src/Games/Progression.php';
+require __DIR__ . '/../src/Engine.php';
 
 $autoloadPath1 = __DIR__ . '/../../../autoload.php';
 $autoloadPath2 = __DIR__ . '/../vendor/autoload.php';
@@ -15,6 +16,8 @@ if (file_exists($autoloadPath1)) {
 use function Hexlet\Code\hello;
 use function Hexlet\Code\askName;
 use function Hexlet\Code\Games\startGame;
+
+$correctAnswer = '';
 
 hello();
 $user = askName();

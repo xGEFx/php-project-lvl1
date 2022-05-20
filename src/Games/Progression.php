@@ -5,9 +5,6 @@ namespace Hexlet\Code\Games;
 use function Hexlet\Code\game;
 use function Hexlet\Code\isCorrect;
 
-require __DIR__ . '/../Engine.php';
-$correctAnswer = '';
-
 function startGame($userName)
 {
     game($userName);

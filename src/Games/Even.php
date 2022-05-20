@@ -2,8 +2,6 @@
 
 namespace Hexlet\Code\Games;
 
-require __DIR__ . '/../Engine.php';
-
 use function Hexlet\Code\game;
 use function Hexlet\Code\isCorrect;
 
