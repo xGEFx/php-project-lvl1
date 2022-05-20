@@ -27,6 +27,12 @@ class Prime implements GamesInterface
 
     public function correctAnswer($question): string
     {
-        return gmp_prob_prime($question) ? 'yes' : 'no';
+        $count = 0;
+        for ($i = 1; $i <= $question; $i++) {
+            if ($question % $i === 0) {
+                $count++;
+            }
+        }
+        return $count === 2 ? 'yes' : 'no';
     }
 }
