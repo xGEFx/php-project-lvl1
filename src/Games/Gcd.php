@@ -29,16 +29,15 @@ class Gcd implements GamesInterface
 
     public function correctAnswer($question): string
     {
-        $operands = explode(" ", $question);
-        while (true) {
-            if ($operands[0] === $operands[1]) {
-                return $operands[1];
-            }
-            if ($operands[0] > $operands[1]) {
-                $operands[0] -= $operands[1];
+        [$x, $y] = explode(" ", $question);
+
+        while ($x != $y) {
+            if ($x > $y) {
+                $x -= $y;
             } else {
-                $operands[1] -= $operands[0];
+                $y -= $x;
             }
         }
+        return $x;
     }
 }
